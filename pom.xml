@@ -18,7 +18,7 @@
           <artifactId>pircbotx</artifactId>
           <version>1.9</version>
           <type>jar</type>
-          <optional>true</true>
+          <optional>true</optional>
       </dependency>
     </dependencies>
 
