@@ -20,14 +20,14 @@ public class Config {
 	public static String[] admins;
 
 	public static void loadConfig() throws FileNotFoundException, IOException {
-		config.load(new FileInputStream("CyBot.properties"));
+		config.load(new FileInputStream("RadioBot.properties"));
 		nick = config.getProperty("nick");
 		user = config.getProperty("user");
 		server = config.getProperty("server");
 		port = Integer.parseInt(config.getProperty("port"));
 		SSL = Boolean.parseBoolean(config.getProperty("SSL"));
-		pass = config.getProperty("pass");
-		serverpass = config.getProperty("serverpass");
+		pass = config.getProperty("password");
+		serverpass = config.getProperty("serverpassword");
 		channels = config.getProperty("channels").split(",");
 		admins = config.getProperty("admins").split(",");
 	}

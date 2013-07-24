@@ -35,6 +35,7 @@ public class RadioBot extends ListenerAdapter implements Listener {
 			Config.config.setProperty("serverpassword", "");
 			Config.config.setProperty("channels", "#radio");
 			Config.config.setProperty("ssl", "false");
+			Config.config.setProperty("admins", "");
 			
 			Config.config.store(new FileOutputStream("RadioBot.properties"), null);
 		} catch (IOException ex) {
