@@ -4,6 +4,7 @@ package me.xir.radio.radiobot;
 
 //PircBotX imports
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.logging.Logger;
 
@@ -11,6 +12,7 @@ import org.pircbotx.PircBotX;
 import org.pircbotx.UtilSSLSocketFactory;
 import org.pircbotx.hooks.Listener;
 import org.pircbotx.hooks.ListenerAdapter;
+
 
 //RadioBot imports
 import me.xir.radio.radiobot.Config;
@@ -25,8 +27,20 @@ public class RadioBot extends ListenerAdapter implements Listener {
 		try {
 			Config.loadConfig();
 		} catch (FileNotFoundException ex) {
-			// Generate config if does not exist.
+			Config.config.setProperty("nick", "RadioBot");
+			Config.config.setProperty("user", "RadioBot");
+			Config.config.setProperty("server", "irc.xir.me");
+			Config.config.setProperty("port", "6667");
+			Config.config.setProperty("password", "");
+			Config.config.setProperty("serverpassword", "");
+			Config.config.setProperty("channels", "#radio");
+			Config.config.setProperty("ssl", "false");
+			
+			Config.config.store(new FileOutputStream("RadioBot.properties"), null);
+		} catch (IOException ex) {
+			ex.printStackTrace();
 		}
+		
 
 		//Setup the bot with all the things
 		bot.setAutoNickChange(true);
