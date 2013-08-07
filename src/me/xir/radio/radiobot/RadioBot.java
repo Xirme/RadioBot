@@ -16,8 +16,11 @@ import org.pircbotx.hooks.Listener;
 import org.pircbotx.hooks.ListenerAdapter;
 
 
+
+
 //RadioBot imports
 import me.xir.radio.radiobot.Config;
+import me.xir.radio.radiobot.commands.*;
 
 public class RadioBot extends ListenerAdapter implements Listener {
 
@@ -76,6 +79,6 @@ public class RadioBot extends ListenerAdapter implements Listener {
 		}
 	}
 	public static void loadListeners() throws Exception {
-		
+		bot.getListenerManager().addListener(new Basic_Information());
 	}
 }
