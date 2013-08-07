@@ -1,3 +1,5 @@
+//Copyright 2013 Xirme Community
+
 package me.xir.radio.radiobot;
 
 //Java imports
