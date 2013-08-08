@@ -18,6 +18,11 @@ public class Config {
 	static boolean SSL;
 	static String[] channels;
 	public static String[] admins;
+	
+	public static String scserver;
+	public static String scport;
+	public static String scauser;
+	public static String scapass;
 
 	public static void loadConfig() throws FileNotFoundException, IOException {
 		config.load(new FileInputStream("RadioBot.properties"));
@@ -30,5 +35,10 @@ public class Config {
 		serverpass = config.getProperty("serverpassword");
 		channels = config.getProperty("channels").split(",");
 		admins = config.getProperty("admins").split(",");
+		
+		scserver = config.getProperty("scserver");
+		scport = config.getProperty("scport");
+		scauser = config.getProperty("scauser");
+		scapass = config.getProperty("scapass");
 	}
 }
