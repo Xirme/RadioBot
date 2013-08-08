@@ -23,7 +23,7 @@ import org.pircbotx.hooks.ListenerAdapter;
 @SuppressWarnings("rawtypes")
 public class Radio_Query extends ListenerAdapter {
 	
-	public static void grabStreamInfo() throws IOException {
+	public static void grabStreamXML() throws IOException {
 		/* FUCK JSOUP FOR NOW AND TRY JDOM
 		 * 
 		 *  final String link = "http://" + Config.scserver + ":" + Config.scport + "/admin.cgi?mode=viewxml";
@@ -94,9 +94,9 @@ public class Radio_Query extends ListenerAdapter {
 		            System.out.println("No file to download. Server replied HTTP code: " + responseCode);
 		        }
 		        httpConn.disconnect();
-		    
+}
 		  
-		  
+public static void parseStreamXML() throws IOException {
 		  SAXBuilder builder = new SAXBuilder();
 		  
 		  File xmlFile = new File("stats.xml");
@@ -129,7 +129,8 @@ public class Radio_Query extends ListenerAdapter {
 		timer.scheduleAtFixedRate(new TimerTask() {
 			public void run() {
 				try {
-					grabStreamInfo();
+					grabStreamXML();
+					parseStreamXML();
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
