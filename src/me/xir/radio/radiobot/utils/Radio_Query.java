@@ -105,7 +105,7 @@ public class Radio_Query extends ListenerAdapter {
 
 			Document document = (Document) builder.build(xmlFile);
 			Element rootNode = document.getRootElement();
-			List list = rootNode.getChildren("SHOUTCASTSERVER");
+			List list = rootNode.getChildren("SONGTITLE");
 
 			System.out.println(list.size());
 			for (int i = 0; i < list.size(); i++) {
