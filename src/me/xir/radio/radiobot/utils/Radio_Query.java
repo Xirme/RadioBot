@@ -16,7 +16,7 @@ import org.pircbotx.hooks.ListenerAdapter;
 @SuppressWarnings("rawtypes")
 public class Radio_Query extends ListenerAdapter {
 	
-	public static void grabStreamInfo(String url) throws IOException {
+	public static void grabStreamInfo() throws IOException {
 		final String link = "http://" + Config.scserver + Config.scport + "/admin.cgi?mode=viewxml";
 		
 		String username = Config.scauser;
@@ -27,7 +27,9 @@ public class Radio_Query extends ListenerAdapter {
 		Document doc = Jsoup.connect(link).header("Authorization", "Basic " + base64login).get();
 		
 		// start grabbing the XML fields here.
-		
+		  for (Element currentsong : doc.select("SONGTITLE")) {
+			  RadioBot.bot.sendMessage("#radio","Current Song: " + currentsong); 
+		    }
 	}
 
 	
@@ -38,7 +40,12 @@ public class Radio_Query extends ListenerAdapter {
 		Timer timer = new Timer();
 		timer.scheduleAtFixedRate(new TimerTask() {
 			public void run() {
-				// do things
+				try {
+					grabStreamInfo();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		}, delay, period);
 	}
