@@ -47,7 +47,7 @@ public class RadioBot extends ListenerAdapter implements Listener {
 			Config.config.setProperty("admins", "");
 			
 			Config.config.setProperty("scserver", "127.0.0.1");
-			Config.config.setProperty("scserver", "8000");
+			Config.config.setProperty("scport", "8000");
 			Config.config.setProperty("scauser", "admin");
 			Config.config.setProperty("scapass", "password");
 			

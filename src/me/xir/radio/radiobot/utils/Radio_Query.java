@@ -17,7 +17,7 @@ import org.pircbotx.hooks.ListenerAdapter;
 public class Radio_Query extends ListenerAdapter {
 	
 	public static void grabStreamInfo() throws IOException {
-		final String link = "http://" + Config.scserver + Config.scport + "/admin.cgi?mode=viewxml";
+		final String link = "http://" + Config.scserver + ":" + Config.scport + "/admin.cgi?mode=viewxml";
 		
 		String username = Config.scauser;
 		String password = Config.scapass;
