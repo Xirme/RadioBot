@@ -105,7 +105,7 @@ public class Radio_Query extends ListenerAdapter {
 
 			Document document = (Document) builder.build(xmlFile);
 			Element rootNode = document.getRootElement();
-			List list = rootNode.getChildren("SONGTITLE");
+			List list = rootNode.getChildren();
 
 			System.out.println(list.size());
 			for (int i = 0; i < list.size(); i++) {
@@ -114,7 +114,7 @@ public class Radio_Query extends ListenerAdapter {
 
 				Element node = (Element) list.get(i);
 
-				RadioBot.bot.sendMessage("#radio","Current Song: " + node.getText()) /*node.getChildText("SONGTITLE"))*/;
+				RadioBot.bot.sendMessage("#radio","Current Song: " + node.getChildText("SONGTITLE"));
 			}
 
 		} catch (IOException io) {
