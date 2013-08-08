@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import me.xir.radio.radiobot.RadioBot;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -19,7 +21,7 @@ public class Radio_Query extends ListenerAdapter {
 		Timer timer = new Timer();
 		timer.scheduleAtFixedRate(new TimerTask() {
 			public void run() {
-				System.out.println("Timer Test");
+				RadioBot.bot.sendMessage("#radio","Current DJ: NULL"); 
 			}
 		}, delay, period);
 	}
