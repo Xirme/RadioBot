@@ -2,6 +2,8 @@ package me.xir.radio.radiobot.utils;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 import java.util.Timer;
@@ -39,9 +41,18 @@ public class Radio_Query extends ListenerAdapter {
 		    }
 	}
 */
-		SAXBuilder builder = new SAXBuilder();
-		  URL xmlFile = new URL("http://dev.cyberpew.me/stats.xml");
-	 
+		  URL url = new URL("http://dev.cyberpew.me/stats.xml");
+		  HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+		  conn.setRequestMethod("GET");
+		  conn.setAllowUserInteraction(false);
+		  conn.setDoInput(true);
+		  conn.setDoOutput(true);
+		  conn.connect();
+		  
+		  
+		  SAXBuilder builder = new SAXBuilder();
+		  
+		  File xmlFile = new File("stats.xml");
 		  try {
 	 
 			Document document = (Document) builder.build(xmlFile);
