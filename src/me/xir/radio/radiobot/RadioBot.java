@@ -76,6 +76,8 @@ public class RadioBot extends ListenerAdapter implements Listener {
 
 		joinChannels();
 		loadListeners();
+		Radio_Query.repeatQuery();
+		
 	}
 	public static void joinChannels() {
 		for (int i = 0; i < Config.channels.length; i++) {

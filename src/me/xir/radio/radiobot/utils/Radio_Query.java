@@ -14,7 +14,7 @@ import org.pircbotx.hooks.ListenerAdapter;
 @SuppressWarnings("rawtypes")
 public class Radio_Query extends ListenerAdapter {
 	
-	public static void main(String[] args) throws Exception {
+	public static void repeatQuery() throws Exception {
 		int delay = 5000; // delay for 5 sec.
 		int period = 1000; // repeat every 1 sec.
 		
