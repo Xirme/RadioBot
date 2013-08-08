@@ -107,6 +107,7 @@ public class Radio_Query extends ListenerAdapter {
 			Element rootNode = document.getRootElement();
 			List list = rootNode.getChildren("SHOUTCASTSERVER");
 
+			System.out.println(list.size());
 			for (int i = 0; i < list.size(); i++) {
 
 				System.out.println("Executed!");
@@ -131,14 +132,14 @@ public class Radio_Query extends ListenerAdapter {
 		Timer timer = new Timer();
 		timer.scheduleAtFixedRate(new TimerTask() {
 			public void run() {
-				
-					try {
-						grabStreamXML();
-						parseStreamXML();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
+
+				try {
+					grabStreamXML();
+					parseStreamXML();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		}, delay, period);
 	}
