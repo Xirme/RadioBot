@@ -2,6 +2,7 @@ package me.xir.radio.radiobot.utils;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -39,7 +40,7 @@ public class Radio_Query extends ListenerAdapter {
 	}
 */
 		SAXBuilder builder = new SAXBuilder();
-		  File xmlFile = new File("http://dev.cyberpew.me/stats.xml");
+		  URL xmlFile = new URL("http://dev.cyberpew.me/stats.xml");
 	 
 		  try {
 	 
