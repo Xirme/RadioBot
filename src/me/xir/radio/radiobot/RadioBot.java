@@ -18,10 +18,14 @@ import org.pircbotx.hooks.ListenerAdapter;
 
 
 
+
+
 //RadioBot imports
 import me.xir.radio.radiobot.Config;
 import me.xir.radio.radiobot.commands.*;
+import me.xir.radio.radiobot.utils.*;
 
+@SuppressWarnings("rawtypes")
 public class RadioBot extends ListenerAdapter implements Listener {
 
 	public static PircBotX bot = new PircBotX();
@@ -79,6 +83,7 @@ public class RadioBot extends ListenerAdapter implements Listener {
 		}
 	}
 	public static void loadListeners() throws Exception {
+		bot.getListenerManager().addListener(new Radio_Query());
 		bot.getListenerManager().addListener(new Basic_Information());
 	}
 }
