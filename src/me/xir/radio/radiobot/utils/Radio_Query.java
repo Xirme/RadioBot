@@ -124,20 +124,21 @@ public class Radio_Query extends ListenerAdapter {
 	}
 
 
-	public static void repeatQuery() throws Exception {
+	public static void repeatQuery() {
 		int delay = 15000; // delay for 15 sec.
 		int period = 10000; // repeat every 10 sec.
 
 		Timer timer = new Timer();
 		timer.scheduleAtFixedRate(new TimerTask() {
 			public void run() {
-				try {
-					grabStreamXML();
-					parseStreamXML();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				
+					try {
+						grabStreamXML();
+						parseStreamXML();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 			}
 		}, delay, period);
 	}
