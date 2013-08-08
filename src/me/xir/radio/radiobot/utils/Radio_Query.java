@@ -97,6 +97,9 @@ public class Radio_Query extends ListenerAdapter {
 }
 		  
 public static void parseStreamXML() throws IOException {
+	
+			System.out.println("Executed!");
+	
 		  SAXBuilder builder = new SAXBuilder();
 		  
 		  File xmlFile = new File("stats.xml");
