@@ -24,7 +24,7 @@ public class Radio_Query extends ListenerAdapter {
 		String login = username + ":" + password;
 		String base64login = new String(Base64.encodeBase64(login.getBytes()));
 
-		Document doc = Jsoup.connect(link).header("Authorization", "Basic " + base64login).get();
+		Document doc = Jsoup.connect(link).userAgent("Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36").header("Authorization", "Basic " + base64login).get();
 		
 		// start grabbing the XML fields here.
 		  for (Element currentsong : doc.select("SONGTITLE")) {
