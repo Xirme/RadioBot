@@ -5,7 +5,7 @@ import org.pircbotx.hooks.events.MessageEvent;
 
 @SuppressWarnings("rawtypes")
 public class Basic_Information extends ListenerAdapter {
-	
+
 	public void onMessage(MessageEvent event) throws Exception {
 		if (event.getMessage().startsWith("song")) {
 			event.getBot().sendMessage(event.getChannel(), "Current song: NULL"); 
