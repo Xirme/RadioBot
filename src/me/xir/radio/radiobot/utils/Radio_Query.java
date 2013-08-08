@@ -17,7 +17,7 @@ import org.pircbotx.hooks.ListenerAdapter;
 public class Radio_Query extends ListenerAdapter {
 	
 	public static void grabStreamInfo() throws IOException {
-		final String link = "http://" + Config.scserver + ":" + Config.scport + "/admin.cgi?mode=viewxml";
+		/* final String link = "http://" + Config.scserver + ":" + Config.scport + "/admin.cgi?mode=viewxml";
 		
 		String username = Config.scauser;
 		String password = Config.scapass;
@@ -25,6 +25,9 @@ public class Radio_Query extends ListenerAdapter {
 		String base64login = new String(Base64.encodeBase64(login.getBytes()));
 
 		Document doc = Jsoup.connect(link).userAgent("Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36").header("Authorization", "Basic " + base64login).timeout(10*1000).get();
+		*/
+		final String link = "http://dev.cyberpew.me/stats.xml";
+		Document doc = Jsoup.connect(link).userAgent("Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36").timeout(10*1000).get();
 		
 		// start grabbing the XML fields here.
 		  for (Element currentsong : doc.select("SONGTITLE")) {
