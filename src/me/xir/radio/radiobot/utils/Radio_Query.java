@@ -114,7 +114,7 @@ public class Radio_Query extends ListenerAdapter {
 
 				Element node = (Element) list.get(i);
 
-				RadioBot.bot.sendMessage("#radio","Current Song: " + node.getContent()) /*node.getChildText("SONGTITLE"))*/;
+				RadioBot.bot.sendMessage("#radio","Current Song: " + node.getText()) /*node.getChildText("SONGTITLE"))*/;
 			}
 
 		} catch (IOException io) {
