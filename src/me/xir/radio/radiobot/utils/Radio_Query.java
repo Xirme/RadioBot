@@ -102,14 +102,14 @@ public static void parseStreamXML() throws IOException {
 		  
 		  File xmlFile = new File("stats.xml");
 		  try {
-			  
-			  System.out.println("Executed!");
 	 
 			Document document = (Document) builder.build(xmlFile);
 			Element rootNode = document.getRootElement();
 			List list = rootNode.getChildren("SHOUTCASTSERVER");
 	 
 			for (int i = 0; i < list.size(); i++) {
+				
+				System.out.println("Executed!");
 	 
 			   Element node = (Element) list.get(i);
 	 
