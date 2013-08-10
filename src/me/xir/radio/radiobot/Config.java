@@ -19,6 +19,7 @@ public class Config {
 	static String[] channels;
 	public static String[] admins;
 
+	public static String bot_location;
 	public static String scserver;
 	public static String scport;
 	public static String scauser;
@@ -26,6 +27,8 @@ public class Config {
 
 	public static void loadConfig() throws FileNotFoundException, IOException {
 		config.load(new FileInputStream("RadioBot.properties"));
+		bot_location = config.getProperty("bot_location");
+		
 		nick = config.getProperty("nick");
 		user = config.getProperty("user");
 		server = config.getProperty("server");

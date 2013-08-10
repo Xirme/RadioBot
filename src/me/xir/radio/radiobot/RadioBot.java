@@ -36,6 +36,7 @@ public class RadioBot extends ListenerAdapter implements Listener {
 		try {
 			Config.loadConfig();
 		} catch (FileNotFoundException ex) {
+			Config.config.setProperty("bot_location", "/path/to/radiobot");
 			Config.config.setProperty("nick", "RadioBot");
 			Config.config.setProperty("user", "RadioBot");
 			Config.config.setProperty("server", "irc.xir.me");

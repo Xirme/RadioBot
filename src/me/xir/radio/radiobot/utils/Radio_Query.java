@@ -75,7 +75,7 @@ public class Radio_Query extends ListenerAdapter {
 
 			// opens input stream from the HTTP connection
 			InputStream inputStream = httpConn.getInputStream();
-			String saveFilePath = "/home/cyberpew/ircbots/radiobot" + File.separator + fileName;
+			String saveFilePath = Config.bot_location + File.separator + fileName;
 
 			// opens an output stream to save into file
 			FileOutputStream outputStream = new FileOutputStream(saveFilePath);
