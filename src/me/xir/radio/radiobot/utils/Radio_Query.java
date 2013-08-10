@@ -20,9 +20,9 @@ public class Radio_Query extends ListenerAdapter {
 	public static void grabStreamXML() throws IOException {
 
 		int BUFFER_SIZE = 4096;
-		String userPassword = "http://" + Config.scauser + ":" + Config.scapass;
+		String userPassword = Config.scauser + ":" + Config.scapass;
 		byte[] encoding = Base64.encodeBase64(userPassword.getBytes());
-		String fileURL = Config.scserver + ":" + Config.scport + "/admin.cgi?mode=viewxml";
+		String fileURL = "http://" + Config.scserver + ":" + Config.scport + "/admin.cgi?mode=viewxml";
 		URL url = new URL(fileURL);
 		HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
 		httpConn.setRequestProperty("Authorization", "Basic " + encoding);
