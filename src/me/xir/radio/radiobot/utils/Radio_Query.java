@@ -108,14 +108,12 @@ public class Radio_Query extends ListenerAdapter {
 			List list = rootNode.getChildren();
 
 			System.out.println(list.size());
-			for (int i = 0; i < list.size(); i++) {
 
 				System.out.println("Executed!");
 
-				Element node = (Element) list.get(i);
+				Element node = rootNode;
 
 				RadioBot.bot.sendMessage("#radio","Current Song: " + node.getChildText("SONGTITLE"));
-			}
 
 		} catch (IOException io) {
 			System.out.println(io.getMessage());
