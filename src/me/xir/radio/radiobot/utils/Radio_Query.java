@@ -11,6 +11,7 @@ import java.util.TimerTask;
 
 import me.xir.radio.radiobot.Config;
 
+import org.apache.commons.codec.binary.Base64;
 import org.pircbotx.hooks.ListenerAdapter;
 
 @SuppressWarnings("rawtypes")
@@ -19,9 +20,13 @@ public class Radio_Query extends ListenerAdapter {
 	public static void grabStreamXML() throws IOException {
 
 		int BUFFER_SIZE = 4096;
-		String fileURL = "http://dev.cyberpew.me/stats.xml";
+		String userPassword = Config.scauser + ":" + Config.scapass;
+		byte[] encoding = Base64.encodeBase64(userPassword.getBytes());
+		String fileURL = Config.scserver + ":" + Config.scport + "/admin.cgi?mode=viewxml";
 		URL url = new URL(fileURL);
 		HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
+		httpConn.setRequestProperty("Authorization", "Basic " + encoding);
+		httpConn.connect();
 		int responseCode = httpConn.getResponseCode();
 
 		// always check HTTP response code first
