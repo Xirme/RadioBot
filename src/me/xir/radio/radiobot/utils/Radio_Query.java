@@ -77,7 +77,7 @@ public class Radio_Query extends ListenerAdapter {
 		httpConn.disconnect();
 	}
 
-	public static void repeatQuery()  {
+	public static void repeatQuery() {
 		int delay = 15000; // delay for 15 sec.
 		int period = 10000; // repeat every 10 sec.
 
