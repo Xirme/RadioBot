@@ -26,6 +26,7 @@ public class Radio_Query extends ListenerAdapter {
 		URL url = new URL(fileURL);
 		HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
 		httpConn.setRequestProperty("Authorization", "Basic " + encoding);
+		httpConn.connect();
 		int responseCode = httpConn.getResponseCode();
 
 		// always check HTTP response code first
